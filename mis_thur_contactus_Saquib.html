@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NazReviews</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=K2D:400i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="JavaScript/contact_form.js"></script>
+    <script src="JavaScript/blog_post.js"></script>
+
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            margin: 0;s
+        }
+
+        .header {
+            padding: 80px;
+            text-align: center;
+            background: #3700B3;
+            color: #03DAC5;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            color: white;
+        }
+
+        .header2 {
+            padding: 25px;
+            text-align: center;
+            background: #3700B3;
+            color: white;
+        }
+
+        .header2 h1 {
+            font-size: 40px;
+            color: white;
+        }
+
+        .header2 p {
+            color: white;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #6200EE;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+
+        .navbar a:hover {
+            background-color: #03DAC5;
+            color: white;
+        }
+
+        .navbar a.active {
+            background-color: #03DAC5;
+            color: white;
+            font-weight: bold;
+        }
+
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        .side {
+            -ms-flex: 30%;
+            flex: 30%;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .main {
+            -ms-flex: 70%;
+            flex: 70%;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .main2 {
+            -ms-flex: 100%;
+            flex: 100%;
+            padding: 20px;
+        }
+
+        .main3 {
+            -ms-flex: 100%;
+            flex: 100%;
+            padding: 40px;
+        }
+
+
+
+        img {
+            height: 300px;
+            width: 200px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #3700B3;
+            font-size: 30px;
+        }
+
+        fieldset {
+            min-width: 100px;
+            display: inline-block;
+            border: none;
+            font-weight: bold;
+        }
+
+        fieldset select {
+            float: right;
+        }
+
+        select {
+            width: 250px;
+            padding: 0;
+            margin: 0;
+            height: 22px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .leftside button {
+            margin-top: 2%;
+            margin-left:2%;
+            width: 20%;
+            border: none;
+            font-weight: bold;
+            background-color: #03DAC5;
+            height: 35px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .leftside button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        p {
+            font-size: 15px;
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        h2 {
+            color: #3700B3;
+        }
+
+        h5 {
+            color: #03DAC5;
+        }
+
+        /*About US PAGE---------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+        .about img {
+            width: 80%;
+            height: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+
+        .fontsizes {
+            text-align: center;
+        }
+
+
+
+
+        /*END About US PAGE-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+        /*TEAM PAGE---------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+        .team img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 250px;
+            height: 300px;
+        }
+
+
+        .team-button button {
+            display: block;
+            margin: 10px auto;
+            width: 10%;
+            border: none;
+            font-weight: bold;
+            background-color: #03DAC5;
+            height: 35px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .team-button button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        /*END TEAM PAGE-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+        /*PRODUCT PAGE----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+        .product-item {
+            width: 30%;
+            float: left;
+            margin: 4em 0;
+            padding-left: 10%;
+
+        }
+
+        .product-img img {
+            align-content: center;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .product-title h4 {
+            text-align: center;
+        }
+
+        .product-title p {
+            text-align: center;
+        }
+
+        .product-button button {
+            width: 100%;
+            border: none;
+            font-weight: bold;
+            background-color: #03DAC5;
+            height: 35px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .product-button button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        .product-button-read button {
+            margin-bottom: 1em;
+            width: 100%;
+            height: 35px;
+            border: none;
+            color: white;
+            display: inline-block;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .product-button-read button {
+            background-color: white;
+            color: black;
+            border: 2px solid #3700B3;
+        }
+
+        .product-button-read button:hover {
+            background-color: #3700B3;
+            color: white;
+        }
+
+        /*END of Product Page-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+        /* BLOG PAGE-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+        .main4 {
+            -ms-flex: 100%;
+            flex: 100%;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 2%;
+        }
+        .card {
+            padding: 20px;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            margin-bottom: 50px;
+
+        }
+
+        .card h2 {
+            color: black;
+        }
+
+        .card h5 {
+            color: black;
+            font-weight: lighter;
+        }
+
+        .card img {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .card button {
+            width: 10%;
+            border: none;
+            font-weight: bold;
+            background-color: #03DAC5;
+            height: 35px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+
+
+
+
+        /* END OF BLOG PAGE-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+        /*Contact Us Page-------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+        .main5 {
+            border-radius: 5px;
+            -ms-flex: 100%;
+            flex: 100%;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-bottom: 5%;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #3700B3;
+        }
+
+        input[type=text], textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 6px;
+            margin-bottom: 16px;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            height: 45px;
+        }
+
+        input[type=button] {
+            margin-top: 2%;
+            width: 20%;
+            border: none;
+            font-weight: bold;
+            background-color: #03DAC5;
+            height: 35px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        input[type=button]:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+
+        /*End of Contact Us-------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+        /*FOOTER------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #6200EE;
+        }
+
+        #footercolor {
+            color: white;
+        }
+        /*END OF FOOTER--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+
+
+
+
+
+
+</head>
+<div>
+
+
+
+<!-- Header -->
+<div class="header" id="home">
+    <h1>NazReviews</h1>
+    <p>A <b>Book Review</b> website created by <b>Mohd Nazmus Saquib</b></p>
+</div>
+
+<!-- END OF HEADER -->
+
+
+<!-- NAVIGATION -->
+
+<div class="navbar">
+    <a href="#home" class="active">Home</a>
+    <a href="#featuredbooks">Featured Books</a>
+    <a href="PHP/products_range.php#product-page">Product</a>
+    <a href="#about">About US</a>
+    <a href="#team">The Team</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<!-- END OF NAVIGATION -->
+
+<div class="row">
+    <div class="side leftside" id="featuredbooks">
+        <form>
+            <fieldset>
+                <legend>Filter:</legend>
+                <br>
+                <br>
+                Genre:
+                <select>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="RomanceNovel">Romance Novel</option>
+                    <option value="ScienceFiction">Science Fiction</option>
+                    <option value="HorrorFiction">Horror Fiction</option>
+                </select>
+                <br>
+                <br>
+                Year: <select>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+            </select>
+                <br>
+                <br>
+                Stars: <select>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+            </select>
+            </fieldset>
+        </form>
+        <button>Submit</button>
+    </div>
+    <br>
+    <div class="main">
+        <h1>Featured Books</h1>
+        <hr>
+        <h2>Elevation</h2>
+        <h5>By: <b>Stephen King</b></h5>
+        <div style="height:300px; width: 200px;"><img src="images/elevation.jpg" alt="elevation"></div>
+        <h6>Ratings: 4.5/5</h6>
+        <p><b>Set in the fictional town of Castle Rock, Maine</b> <br>
+            <br>
+            <b>The latest from legendary master storyteller Stephen King, a riveting, extraordinarily eerie, and moving story about a man whose mysterious affliction brings a small town together—a timely, upbeat tale about finding common ground despite deep-rooted differences.</b>
+            <br>
+            <br>
+            Although Scott Carey doesn’t look any different, he’s been steadily losing weight. There are a couple of other odd things, too. He weighs the same in his clothes and out of them, no matter how heavy they are. Scott doesn’t want to be poked and prodded. He mostly just wants someone else to know, and he trusts Doctor Bob Ellis.
+            <br>
+            <br>
+            In the small town of Castle Rock, the setting of many of King’s most iconic stories, Scott is engaged in a low grade—but escalating—battle with the lesbians next door whose dog regularly drops his business on Scott’s lawn. One of the women is friendly; the other, cold as ice. Both are trying to launch a new restaurant, but the people of Castle Rock want no part of a gay married couple, and the place is in trouble. When Scott finally understands the prejudices they face–including his own—he tries to help. Unlikely alliances, the annual foot race, and the mystery of Scott’s affliction bring out the best in people who have indulged the worst in themselves and others.
+            <br>
+            <br>
+            From Stephen King, our “most precious renewable resource, like Shakespeare in the malleability of his work” (The Guardian), Elevation is an antidote to our divisive culture, as gloriously joyful (with a twinge of deep sadness) as “It’s a Wonderful Life.”</p>
+        <br>
+        <hr>
+        <br>
+        <h2>Kingdom Of Ash</h2>
+        <h5>By: Sarah J. Mass</h5>
+        <div style="height:300px; width: 200px;"><img src="images/kingdomofash.jpg" alt="kingdomofash"></div>
+        <h6>Ratings: 3/5</h6>
+        <p><b>This hardcover edition will have a poster on the back of the jacket featuring art from Charlie Bowater and pages from Sarah’s writing notebook.</b>
+            <br>
+            <br>
+            <b>Years in the making, Sarah J. Maas’s #1 New York Times bestselling Throne of Glass series draws to an epic, unforgettable conclusion. Aelin Galathynius’s journey from slave to king’s assassin to the queen of a once-great kingdom reaches its heart-rending finale as war erupts across her world. . .</b>
+            <br>
+            <br>
+            Aelin has risked everything to save her people—but at a tremendous cost. Locked within an iron coffin by the Queen of the Fae, Aelin must draw upon her fiery will as she endures months of torture. Aware that yielding to Maeve will doom those she loves keeps her from breaking, though her resolve begins to unravel with each passing day…
+            <br>
+            <br>
+            With Aelin captured, Aedion and Lysandra remain the last line of defense to protect Terrasen from utter destruction. Yet they soon realize that the many allies they’ve gathered to battle Erawan’s hordes might not be enough to save them. Scattered across the continent and racing against time, Chaol, Manon, and Dorian are forced to forge their own paths to meet their fates. Hanging in the balance is any hope of salvation—and a better world.
+            <br>
+            <br>
+            And across the sea, his companions unwavering beside him, Rowan hunts to find his captured wife and queen—before she is lost to him forever.
+            <br>
+            <br>
+            As the threads of fate weave together at last, all must fight, if they are to have a chance at a future. Some bonds will grow even deeper, while others will be severed forever in the explosive final chapter of the Throne of Glass series.</p>
+        <br>
+        <hr>
+        <br>
+        <h2>Two Dark Reigns</h2>
+        <h5>By: Kendare Blake</h5>
+        <div style="height:300px; width: 200px;"><img src="images/twodarkreigns.jpg" alt="twodarkreigns"></div>
+        <h6>Ratings: 4/5</h6>
+        <p><b>#1 New York Times bestselling author Kendare Blake returns with the highly anticipated third book in the Three Dark Crowns series! And while Arsinoe, Mirabella, and Katharine all have their own scores to settle, they aren’t the only queens stirring things up on Fennbirn Island.</b>
+            <br>
+            <br>
+            Queen Katharine has waited her entire life to wear the crown. But now that she finally has it, the murmurs of dissent grow louder by the day. There’s also the alarming issue of whether or not her sisters are actually dead—or if they’re waiting in the wings to usurp the throne.
+            <br>
+            <br>
+            Mirabella and Arsinoe are alive, but in hiding on the mainland and dealing with a nightmare of their own: being visited repeatedly by a specter they think might be the fabled Blue Queen. Though she says nothing, her rotting, bony finger pointing out to sea is clear enough: return to Fennbirn.
+            <br>
+            <br>
+            Jules, too, is in a strange place—in disguise. And her only confidants, a war-gifted girl named Emilia and her oracle friend Mathilde, are urging her to take on a role she can’t imagine filling: a legion-cursed queen who will lead a rebel army to Katharine’s doorstep.
+            <br>
+            <br>
+            This is an uprising that the mysterious Blue Queen may have more to do with than anyone could have guessed—or expected.</p>
+        <br>
+        <hr>
+        <br>
+        <h2>All of This Is True</h2>
+        <h5>By: Lygia Day Penaflor</h5>
+        <div style="height:300px; width: 200px;"><img src="images/allofthisistrue.jpg" alt="allofthisistrue"></div>
+        <h6>Ratings: 4/5</h6>
+        <p><b>“Devious, delicious, and gasp-worthy.” (Kathleen Glasgow, New York Times bestselling author of Girl in Pieces)</b>
+            <br>
+            <br>
+            In this genre-defying page-turner from Lygia Day Peñaflor, four teens befriend their favorite YA novelist, only to find their deepest, darkest secrets in the pages of her next book—with devastating consequences.
+            <br>
+            <br>
+            Miri Tan loved the book Undertow like it was a living being. So when she and her friends went to a book signing to hear the author, Fatima Ro, they concocted a plan to get close to her.
+            <br>
+            <br>
+            Soleil Johnston wanted to be a writer herself one day. When she and her friends started hanging out with her favorite author, Fatima Ro, she couldn’t believe their luck—especially when Jonah Nicholls started hanging out with them, too.
+            <br>
+            <br>
+            Penny Panzarella was more than the materialist party girl everyone at the Graham School thought she was—and she was willing to share all her secrets with Fatima Ro to prove it.
+            <br>
+            <br>
+            Jonah Nicholls had more to hide than any of them. And now that Fatima’s next book is out in the world, he’s the one who is paying the price...
+            <br>
+            <br>
+            Perfect for fans of One of Us Is Lying—and told as a series of interviews, journal entries, and even pages from the book within the book—this gripping story of a fictional scandal will keep you on the edge of your seat from beginning to end.</p>
+        <br>
+        <br>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- ABOUT US PAGE -->
+<div class="header2" id="about">
+    <h1>About Us</h1>
+</div>
+
+<div class="row">
+    <div class="main2 about">
+        <br>
+        <br>
+        <img src="images/library.jpeg" alt="library">
+        <h1 class="fontsizes">Who are we?</h1>
+        <h3 class="fontsizes">With so many titles, it is vital to give customers an easy way to find precisely the books they are looking for. Our search engine enables customers to locate books by title, author, or keyword in a few seconds at most. Customers with a general idea of what they want can use our Browse pages to sift through hundreds of categories to find exactly the right book. To further assist users, we offer descriptions and reviews, and our See Inside program lets customers read excerpts from tens of thousands of titles. We also offer editor recommendations and customer reviews on hundreds of thousands of titles.
+        </h3>
+        <br>
+        <br>
+        <br>
+        <h1 class="fontsizes">Our Mission</h1>
+        <h3 class="fontsizes">"To provide the top reviews of each and every book on this planet!"</h3>
+        <h4 class="fontsizes"><em>Oct 9th, 2018</em></h4>
+        <br>
+        <br>
+        <br>
+        <h1 class="fontsizes">Our Promise</h1>
+        <h3 class="fontsizes" >"We will keep delivering the reviews to our users for free for life.<br> Help users pick new books.<br> Learn about books before buying them"</h3>
+        <h4 class="fontsizes"><em>Oct 10th, 2018</em></h4>
+        <br>
+        <br>
+
+    </div>
+</div>
+
+
+<!-- END OF ABOUT US PAGE -->
+
+<!-- Team Page -->
+
+<div class="header2" id="team">
+    <h1>The Team</h1>
+</div>
+
+<div class="row">
+    <div class="main2 team">
+        <br>
+        <br>
+        <img src="images/saquib.PNG" alt="profilepic">
+        <h2 class="fontsizes">Mohd Nazmus Saquib</h2>
+        <h4 class="fontsizes">Web Developer, Software Architect</h4>
+        <p class="fontsizes">I am the Developer of this site and the mastermind of this website.<br> Building this website helped me gain knowledge of web development and this website the result of it.</p>
+        <h6 class="fontsizes">email: msaquib@masonlive.gmu.edu<br>Phone Number: 571-388-9750</h6>
+        <div class="team-button">
+            <button>Contact Me</button>
+        </div>
+        <br>
+        <br>
+        <img src="images/gabe.png" alt="profilepic">
+        <h2 class="fontsizes">Gabriel Hadad</h2>
+        <h4 class="fontsizes">Web Developer</h4>
+        <p class="fontsizes">Assisted Mohd Saquib with critical information about the website</p>
+        <h6 class="fontsizes">email: msaquib@masonlive.gmu.edu<br>Phone Number: 571-388-9750</h6>
+        <div class="team-button">
+            <button>Contact Me</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- END OF TEAM PAGE -->
+
+<!-- BLOG -->
+<div class="header2" id="blog">
+    <h1>Blog</h1>
+</div>
+
+
+    <div class="row">
+        <div class="main4">
+            <form id="card">
+                <fieldset>
+                    <div id="txtHint2">
+                    </div>
+                    <br>
+                    <legend class="cardlegend">username</legend>
+                    <br>
+                    <textarea rows="1" cols="120" id="blog_username" name="blog_username" placeholder="@username"></textarea>
+                    <br>
+                    <legend class="cardlegend">Date</legend>
+                    <br>
+                    <input type="datetime-local" id="datetime" name="datetime" placeholder="Date (01/01/1991)">
+                    <br>
+                    <br>
+                    <legend class="cardlegend">Title</legend>
+                    <br>
+                    <textarea rows="1" cols="120" id="blog_title" name="blog_title" placeholder="Title"></textarea>
+                    <br>
+                    <legend class="cardlegend">Comment</legend>
+                    <br>
+                    <textarea rows="10" cols="120" id="blog_comment" name="blogcomment" placeholder="Please enter your post.."></textarea>
+                </fieldset>
+                <br>
+                <input type="button" value="send" name="" onclick="blog_submit_form()">
+                <br>
+                <h4> To see your posts and others blog posts, please click on the button below.</h4>
+                <input type="button" onclick="location.href='PHP/blog_post_page.php';" value="See More Posts" />
+            </form>
+        </div>
+    </div>
+
+
+<!-- END OF BLOG PAGE-->
+<br><br><br>
+
+
+<!--Contact US Page-->
+
+<div class="header2" id="contact">
+    <h1>Contact Us</h1>
+    <p>Stop by our office or leave us a message!</p>
+</div>
+
+
+<div class="row">
+    <div class="main5">
+        <br>
+        <br>
+        <br>
+        <div>
+            <form>
+                <fieldset class="center">
+                    <legend>Personal Information</legend>
+                    <div id="txtHint">
+
+                    </div>
+                    <br>
+                    <br>
+                    <p id="helpText"><span style="color:#6200EE; font-weight: bold;"></span></p>
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" onfocus="firstnamefocusFunction()">
+
+                    <label>Middle Initial:</label>
+                    <input type="text" id="middle_name" name="middle_name" onfocus="middlenamefocusFunction()">
+
+                    <label>Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" onfocus="lastnamefocusFunction()">
+
+                    <label>Suffix:</label>
+                    <select id="suffix" name="suffix" onfocus="suffixfocusFunction()">
+                        <option value="N/A"></option>
+                        <option value="Jr">Jr</option>
+                        <option value="Sr">Sr</option>
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                        <option value="IV">IV</option>
+                    </select>
+                    <br>
+
+                    <label>Street Address:</label>
+                    <input type="text" id="address1" name="address1" onfocus="address1focusFunction()">
+
+                    <label>Street Address II:</label>
+                    <input type="text" id="address2" name="address2" onfocus="address2focusFunction()">
+
+                    <label>City:</label>
+                    <input type="text" id="city" name="city" onfocus="cityfocusFunction()">
+
+                    <label>State:</label>
+                    <select id="state" name="state" onfocus="statefocusFunction()">
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                    <br>
+
+                    <label>Zip Code:</label>
+                    <input type="text" id="zip" name="zip" pattern="[0-9]*" onfocus="zipfocusFunction()">
+
+                    <label>Country:</label>
+                    <select id="country" name="country" onfocus="countryfocusFunction()">
+                        <option value="Canada">Canada</option>
+                        <option value="USA">USA</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="India">India</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                    </select>
+                    <br>
+
+                    <label>Phone Number:</label>
+                    <input type="text" id="phone_number" name="phone_number" onfocus="phonefocusFunction()">
+
+                    <label>Email Address:</label>
+                    <input type="text" id="email" name="email" onfocus="emailfocusFunction()">
+                </fieldset>
+                <br>
+                <br>
+                <div class="center">
+                    <fieldset>
+                        <legend>Contact Preference</legend>
+                        <br>
+                        <label>Email: <input type="radio" name="contactPreference" id="contactPreference" value="email"></label>
+                        <br>
+                        <label>Mail: <input type="radio" name="contactPreference" id="contactPreference" value="mail"></label>
+                        <br>
+                        <label>Phone: <input type="radio" name="contactPreference" id="contactPreference" value="phone"></label>
+                    </fieldset>
+                    <br>
+                    <br>
+                    <br>
+                    <fieldset class="message">
+                        <legend>Message</legend>
+                        <br>
+                        <textarea rows="20" cols="60" id="message" name="message" placeholder="Please enter your message.." onfocus="messagefocusFunction()"></textarea>
+                        <br>
+                        <input type="button" value="send" name="" onclick="submit_form()">
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+    <h2 id="footercolor">&copy Copyright, Created by: Mohd Nazmus Saquib</h2>
+</div>
+
+
+</body>
+</html>
